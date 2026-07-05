@@ -2,9 +2,8 @@
 const mobileMenu = document.getElementById('mobile-menu');
 const navMenu = document.querySelector('.nav-menu');
 
-if (mobileMenu && navMenu) {
+if (mobileMenu) {
     mobileMenu.addEventListener('click', () => {
-        // Alterna a classe correspondente ao CSS
         navMenu.classList.toggle('active');
     });
 }
@@ -25,14 +24,35 @@ function openTab(tabId) {
 }
 
 // --- RECURSO INTERATIVO 2: Mini-Quiz Dinâmico ---
-function checkAnswer(isCorrect) {
-    const feedback = document.getElementById('quiz-feedback');
-    if (isCorrect) {
-        feedback.textContent = "Correto! Perseu decapitou a Medusa usando seu escudo como espelho.";
-        feedback.style.color = "green";
-    } else {
-        feedback.textContent = "Incorreto. Tente novamente! Dica: Ele usou sandálias aladas.";
-        feedback.style.color = "red";
+function checkAnswer(questionNum, isCorrect) {
+    const feedback = document.getElementById(`quiz-feedback-${questionNum}`);
+    
+    if (questionNum === 1) {
+        if (isCorrect) {
+            feedback.textContent = "Correto! Perseu decapitou a Medusa usando seu escudo como espelho.";
+            feedback.style.color = "green";
+        } else {
+            feedback.textContent = "Incorreto. Tente novamente! Dica: Ele usou o escudo de Atenas.";
+            feedback.style.color = "red";
+        }
+    } 
+    else if (questionNum === 2) {
+        if (isCorrect) {
+            feedback.textContent = "Correto! Prometeu roubou o fogo sagrado para entregá-lo à humanidade.";
+            feedback.style.color = "green";
+        } else {
+            feedback.textContent = "Incorreto. Dica: Ele foi condenado a um tormento eterno por Zeus.";
+            feedback.style.color = "red";
+        }
+    } 
+    else if (questionNum === 3) {
+        if (isCorrect) {
+            feedback.textContent = "Correto! O Minotauro habitava o coração do escuro labirinto de Creta.";
+            feedback.style.color = "green";
+        } else {
+            feedback.textContent = "Incorreto. Dica: Teseu usou o fio de Ariadne para derrotar essa criatura.";
+            feedback.style.color = "red";
+        }
     }
 }
 
