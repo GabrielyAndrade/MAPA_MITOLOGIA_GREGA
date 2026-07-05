@@ -72,7 +72,18 @@
                     <p>No coração do escuro labirinto de Creta habita o Minotauro, uma besta sedenta de sangue. O herói Teseu oferece-se como tributo para matar a criatura, guiado apenas pelo fio dourado da princesa Ariadne.</p>
                 </div>
             </div>
+        </section>
 
+        <!-- Seção do Mini-Quiz Interativo -->
+        <section class="quiz-section" style="background: #fbf9f3; padding: 2rem; border-radius: 4px; margin-top: 3rem; color: #0b1a30; border: 1px solid rgba(197, 168, 128, 0.25);">
+            <h3>Desafio do Olimpo: Mini-Quiz</h3>
+            <p style="margin-bottom: 1rem; font-family: 'Georgia', serif;">Qual herói utilizou um escudo reflexivo como espelho para derrotar a Medusa?</p>
+            
+            <button onclick="checkAnswer(false)" style="padding: 0.5rem 1rem; margin-right: 0.5rem; cursor: pointer; background: #0b1a30; color: white; border: none;">A) Heracles</button>
+            <button onclick="checkAnswer(true)" style="padding: 0.5rem 1rem; margin-right: 0.5rem; cursor: pointer; background: #0b1a30; color: white; border: none;">B) Perseu</button>
+            <button onclick="checkAnswer(false)" style="padding: 0.5rem 1rem; cursor: pointer; background: #0b1a30; color: white; border: none;">C) Teseu</button>
+        
+            <div id="quiz-feedback" style="margin-top: 1rem; font-weight: bold;"></div>
         </section>
     </main>
 
