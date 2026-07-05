@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympos - Oferenda e Contato</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Ω Olympos</div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="deuses.html">Deuses</a></li>
+                <li><a href="mitos.html">Mitos</a></li>
+                <li><a href="herois.html">Heróis</a></li>
+                <li><a href="contato.html" class="active">Contato</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">☰</div>
+        </nav>
+    </header>
+
+    <main class="contato-split-container">
+        <section class="contato-info-side">
+            <div class="info-side-content">
+                <h2>Invoque o Divino</h2>
+                <p class="contato-description">
+                    Este portal foi construído em louvor às antigas histórias. Se deseja contribuir com o conhecimento sagrado, apontar uma heresia, ou simplesmente enviar uma prece, os céus estão ouvindo.
+                </p>
+                
+                <div class="contato-channels">
+                    <div class="channel-item">
+                        <div class="channel-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 21s-6-5.5-6-10a6 6 0 0112 0c0 4.5-6 10-6 10z"/>
+                                <circle cx="12" cy="11" r="2"/>
+                            </svg>
+                        </div>
+                        <div class="channel-text">
+                            <strong>Localização</strong>
+                            <span>Monte Olimpo, Pico Mytikas, Grécia</span>
+                        </div>
+                    </div>
+
+                    <div class="channel-item">
+                        <div class="channel-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <div class="channel-text">
+                            <strong>Mensageiro Hermes</strong>
+                            <span>hermes@olympos.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contato-form-side">
+            <div class="form-side-content">
+                <div class="form-header">
+                    <span class="omega-symbol">Ω</span>
+                    <h2>Oferenda (Contato)</h2>
+                    <p>Deixe sua mensagem nas chamas do altar virtual.</p>
+                </div>
+
+                <form action="#" class="altar-form">
+                    <div class="form-group">
+                        <label for="nome">Nome do Mortal</label>
+                        <input type="text" id="nome" placeholder="Ex: Teseu" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail (Pombo-Correio)</label>
+                        <input type="email" id="email" placeholder="teseu@atenas.gr" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="assunto">Assunto da Oferenda</label>
+                        <input type="text" id="assunto" placeholder="Dúvida sobre os Doze Trabalhos" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensagem">Sua Mensagem ao Olimpo</label>
+                        <textarea id="mensagem" rows="5" placeholder="Ó grandes deuses..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-enviar-olimpo">Enviar ao Olimpo</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-premium">
+        <div class="footer-symbol">&Omega;</div>
+        <h3 class="footer-title">Olympo</h3>
+        <p class="footer-tagline">O Portal da Mitologia Grega. Explore os contos antigos que moldaram a civilização ocidental.</p>
+        <nav class="footer-nav">
+            <a href="mitos.html">Mitos</a>
+            <span class="footer-bullet">&bull;</span>
+            <a href="deuses.html">Deuses</a>
+            <span class="footer-bullet">&bull;</span>
+            <a href="herois.html">Heróis</a>
+            <span class="footer-bullet">&bull;</span>
+            <a href="contato.html">Contato</a>
+        </nav>
+        <p class="footer-copyright">&copy; 2026 Olympos. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

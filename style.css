@@ -1,0 +1,900 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
+
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cinzel', 'Georgia', serif;
+}
+
+body {
+    background-color: #0a1118;
+    color: #f4f1ea; /* CORRIGIDO: Texto geral do corpo agora é claro (marfim) */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   CABEÇALHO RECONSTRUÍDO (Contraste Corrigido)
+   ========================================================================== */
+header {
+    background-color: rgba(10, 17, 24, 0.75); /* CORRIGIDO: Fundo translúcido escuro combina melhor */
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    position: absolute; 
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #c5a880; /* CORRIGIDO: Logo agora é Dourado Mítico */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+/* Lista de Links Alinhada Horizontalmente */
+nav .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem; 
+}
+
+nav .nav-menu li a {
+    color: #dfdfd5; /* CORRIGIDO: Links do menu em tom claro legível */
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+nav .nav-menu li a:hover, 
+nav .nav-menu li a.active {
+    color: #c5a880; /* CORRIGIDO: Destaque ativo/hover em dourado */
+    border-bottom: 2px solid #c5a880; 
+    opacity: 1;
+}
+
+/* Ícone de Menu Mobile */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #f4f1ea; /* CORRIGIDO: Hamburguer legível no mobile */
+}
+
+/* ==========================================================================
+   SEÇÃO HERO (TELA CHEIA) - CORRIGIDA PARA CONTRASTE COM CINZA CLARO
+   ========================================================================== */
+.hero-fullscreen {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Mantido o fundo original claro e gradiente suave da imagem */
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.4), rgba(245,242,235,0.95)), 
+                      url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0jqxE3vVcSibjJhusInUXn5hVVrMH3Pu-svurmaQg-Q&s=10');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-symbol {
+    font-size: 3rem;
+    color: #0b1a30; /* CORRIGIDO: Símbolo em azul escuro para contrastar com o cinza claro */
+    margin-bottom: 0.5rem;
+}
+
+.hero-fullscreen h1 {
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    color: #0b1a30; /* CORRIGIDO: Mudado de branco para azul escuro profundo para perfeita leitura */
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.hero-fullscreen p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #2c3e50; /* CORRIGIDO: Tom escuro para destacar a frase em itálico */
+    margin-bottom: 2.5rem;
+    font-style: italic;
+}
+
+/* Botões Estilizados */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.btn-primary {
+    background-color: #c5a880; /* CORRIGIDO: Botão primário agora usa o dourado do Olimpo */
+    color: #0a1118; /* Texto escuro dentro do botão claro */
+    text-decoration: none;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+    border: 1px solid #c5a880;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: #c5a880;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #0b1a30; /* CORRIGIDO: Texto em azul escuro para aparecer no fundo cinza */
+    text-decoration: none;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+    border: 1px solid #0b1a30; /* CORRIGIDO: Borda escura acompanhando o texto */
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #0b1a30;
+    color: #ffffff;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 2rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #2c3e50; /* CORRIGIDO: Escurecido para dar leitura no rodapé claro do hero */
+    opacity: 0.7;
+}
+
+/* ==========================================================================
+   CONTEÚDO INFERIOR E CARDS
+   ========================================================================== */
+.container {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+}
+
+.intro-caos {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 5rem auto;
+}
+
+.greco-symbol {
+    font-size: 1.8rem;
+    color: #c5a880; /* CORRIGIDO: Símbolo em dourado */
+    margin-bottom: 1.5rem;
+}
+
+.intro-caos h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 2px;
+    color: #ffffff; /* CORRIGIDO: Título em destaque claro */
+    margin-bottom: 2rem;
+}
+
+.intro-caos p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #a0aec0; /* CORRIGIDO: Cinza suave legível sobre fundo escuro */
+}
+
+.divider-line {
+    width: 1px;
+    height: 80px;
+    background-color: #c5a880; /* CORRIGIDO: Linha divisória dourada */
+    margin: 3rem auto 0 auto;
+    opacity: 0.4;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #ffffff; /* CORRIGIDO: Legibilidade do título da seção */
+    margin-bottom: 0.5rem;
+}
+
+.underline-title {
+    width: 60px;
+    height: 3px;
+    background-color: #c5a880; /* CORRIGIDO: Linha inferior dourada */
+    margin-bottom: 2.5rem;
+}
+
+.grid-cards-premium {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.card-premium {
+    background-color: #fcfaf6;
+    color: #0b1a30; /* Mantém os textos internos do card escuros sobre o fundo claro */
+    border-radius: 12px;
+    padding: 6rem 2rem 2.5rem 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(197, 168, 128, 0.3); /* Bordinha dourada sutil */
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.zeus-bg, .poseidon-bg, .hades-bg {
+    background-image: linear-gradient(to bottom, rgba(252,250,246,0.92), rgba(252,250,246,0.98));
+}
+
+.card-symbol {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #c5a880; /* Ícones internos do card em ouro */
+    font-weight: bold;
+}
+
+.card-premium h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.2rem;
+    color: #0b1a30;
+}
+
+.card-subtitle {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #7b8a99;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    display: block;
+}
+
+.center-link {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.panteon-link {
+    color: #c5a880; /* CORRIGIDO: Link externo em dourado místico */
+    text-decoration: none;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.panteon-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   RODAPÉ EDITORIAL PREMIUM (Adaptado ao Tema Escuro)
+   ========================================================================== */
+.footer-premium {
+    background-color: #070c11; /* CORRIGIDO: Fundo ligeiramente mais escuro que o body */
+    color: #dfdfd5; 
+    text-align: center;
+    padding: 5rem 1.5rem 4rem 1.5rem; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid rgba(197, 168, 128, 0.15); 
+    margin-top: auto; 
+}
+
+.footer-symbol {
+    font-size: 2.2rem;
+    color: #c5a880; /* CORRIGIDO: Símbolo dourado */
+    margin-bottom: 0.8rem;
+}
+
+.footer-title {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 5px; 
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+}
+
+.footer-tagline {
+    font-size: 1.05rem;
+    font-family: 'Georgia', serif;
+    color: #a0aec0; 
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+/* Links centrais do Rodapé */
+.footer-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+}
+
+.footer-nav a {
+    color: #a0aec0; 
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #c5a880; /* Hover dourado */
+}
+
+.footer-bullet {
+    color: #c5a880;
+    font-size: 0.8rem;
+    opacity: 0.5;
+}
+
+/* Linha final de Copyright */
+.footer-copyright {
+    font-size: 0.8rem;
+    color: #718096;
+    font-family: 'Georgia', serif;
+}
+
+@media (max-width: 480px) {
+    .footer-nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .footer-bullet {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE MOBILE
+   ========================================================================== */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 5%;
+    }
+    
+    nav .nav-menu {
+        display: none; 
+    }
+
+    .menu-toggle {
+        display: block; 
+    }
+}
+
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS DA PÁGINA DE DEUSES 
+   ========================================================================== */
+.intro-panteon {
+    text-align: center;
+    max-width: 800px;
+    margin: 6rem auto 4rem auto; 
+}
+
+.intro-panteon h2 {
+    font-size: 3.2rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #ffffff; /* CORRIGIDO: Branco nítido */
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.grid-deuses-12 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 2rem;
+    margin-bottom: 6rem;
+}
+
+.hera-bg, .demeter-bg, .atena-bg, .apolo-bg, .artemis-bg, 
+.ares-bg, .afrodite-bg, .hefesto-bg, .hermes-bg, .dionisio-bg {
+    background-image: linear-gradient(to bottom, rgba(252,250,246,0.92), rgba(252,250,246,0.98));
+}
+
+@media (max-width: 1024px) {
+    .grid-deuses-12 {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-deuses-12 {
+        grid-template-columns: 1fr; 
+    }
+    .intro-panteon h2 {
+        font-size: 2.2rem;
+    }
+}
+  
+/* ==========================================================================
+   CORREÇÃO DEFINITIVA MITOS E LENDAS (Fundo Escuro Adaptado)
+   ========================================================================== */
+main.container {
+    display: block !important;
+    max-width: 1100px;
+    margin: 12rem auto 4rem auto !important; 
+    padding: 0 1.5rem;
+}
+
+.intro-mitos {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 5rem auto !important;
+}
+
+.greco-top-line {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c5a880; /* CORRIGIDO: Dourado para o topo */
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    border-bottom: 1px solid #c5a880;
+    padding-bottom: 4px;
+}
+
+.intro-mitos h2 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #ffffff; /* CORRIGIDO: Branco de Alto Impacto */
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.section-tagline {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #a0aec0; /* CORRIGIDO: Legibilidade do texto descritivo */
+    font-family: 'Georgia', serif;
+}
+
+.mitos-list-section {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2.5rem !important; 
+    width: 100%;
+    margin-bottom: 6rem;
+}
+
+.card-horizontal-mito {
+    display: flex !important;
+    background-color: #fbf9f3 !important; 
+    border: 1px solid rgba(197, 168, 128, 0.25) !important;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 100%;
+    min-height: auto; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.mito-content {
+    width: 100% !important; 
+    padding: 3rem;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    background: none !important; 
+}
+
+.mito-category {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #7b8a99;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+    display: block;
+}
+
+.mito-content h3 {
+    font-size: 1.7rem;
+    color: #0b1a30; /* Mantém escuro para ler dentro do card claro */
+    margin-bottom: 1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.mito-content p {
+    font-family: 'Georgia', serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+}
+
+.mito-link {
+    color: #0b1a30;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    align-self: flex-start; 
+}
+
+.mito-link:hover {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    main.container { margin: 8rem auto 4rem auto !important; }
+    .mito-content { padding: 2rem; }
+    .intro-mitos h2 { font-size: 2.3rem; }
+}
+
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS PÁGINA DE HERÓIS
+   ========================================================================== */
+.intro-herois {
+    text-align: center;
+    max-width: 800px;
+    margin: 12rem auto 4rem auto !important; 
+}
+
+.intro-herois h2 {
+    font-size: 3.2rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #ffffff; /* CORRIGIDO */
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.grid-herois {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2rem;
+    margin-bottom: 6rem;
+}
+
+.card-heroi {
+    background-color: #fbf9f3 !important; 
+    border: 1px solid rgba(197, 168, 128, 0.2) !important;
+    border-radius: 4px;
+    padding: 3rem 2rem;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 320px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-heroi:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(197, 168, 128, 0.15);
+}
+
+.heroi-tagline {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #7b8a99;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.card-heroi h3 {
+    font-size: 1.8rem;
+    color: #0b1a30;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.heroi-separator {
+    width: 40px;
+    height: 1px;
+    background-color: rgba(11, 26, 48, 0.2);
+    margin-bottom: 1.5rem;
+}
+
+.card-heroi p {
+    font-family: 'Georgia', serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #4a5568;
+    margin-bottom: 2rem;
+}
+
+.heroi-feito {
+    font-size: 0.9rem;
+    color: #0b1a30;
+    line-height: 1.6;
+}
+
+.heroi-feito strong {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: #7b8a99;
+}
+
+@media (max-width: 1024px) {
+    .grid-herois {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-herois { margin: 8rem auto 3rem auto !important; }
+    .intro-herois h2 { font-size: 2.3rem; }
+    .grid-herois {
+        grid-template-columns: 1fr; 
+        gap: 1.5rem;
+    }
+    .card-heroi { min-height: auto; padding: 2rem; }
+}
+
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS TELA DE CONTATO (OFERENDA)
+   ========================================================================== */
+.contato-split-container {
+    display: flex !important;
+    min-height: calc(100vh - 80px); 
+    width: 100%;
+    margin-top: 80px; 
+    background-color: #fbf9f3;
+}
+
+.contato-info-side {
+    width: 50%;
+    background-color: #f3efe6; 
+    background-image: linear-gradient(to right, rgba(243, 239, 230, 0.92), rgba(243, 239, 230, 0.85)); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+}
+
+.info-side-content {
+    width: 100%;
+    max-width: 460px;
+}
+
+.contato-info-side h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #0b1a30;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.contato-description {
+    font-family: 'Georgia', serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #4a5568;
+    margin-bottom: 3.5rem;
+}
+
+.contato-channels {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.channel-item {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.channel-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(11, 26, 48, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0b1a30;
+    background-color: rgba(255, 255, 255, 0.4);
+    flex-shrink: 0;
+}
+
+.channel-icon svg {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.channel-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.channel-text strong {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #7b8a99;
+}
+
+.channel-text span {
+    font-size: 0.95rem;
+    color: #0b1a30;
+}
+
+.contato-form-side {
+    width: 50%;
+    background-color: #fbf9f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+}
+
+.form-side-content {
+    width: 100%;
+    max-width: 460px;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.omega-symbol {
+    font-size: 1.8rem;
+    color: #0b1a30;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-header h2 {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #0b1a30;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.form-header p {
+    font-size: 0.9rem;
+    color: #7b8a99;
+}
+
+.altar-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #7b8a99;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background-color: #eae5da !important; 
+    border: 1px solid rgba(11, 26, 48, 0.08);
+    border-radius: 2px;
+    padding: 0.9rem 1.2rem;
+    font-size: 0.95rem;
+    color: #0b1a30;
+    font-family: inherit;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: rgba(11, 26, 48, 0.4);
+    background-color: #e4dec0 !important;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(11, 26, 48, 0.4);
+}
+
+.btn-enviar-olimpo {
+    background-color: #0b1a30 !important;
+    color: #ffffff !important;
+    border: none;
+    border-radius: 2px;
+    padding: 1.1rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 0.5rem;
+}
+
+.btn-enviar-olimpo:hover {
+    background-color: #162a4a !important;
+}
+
+.btn-enviar-olimpo:active {
+    transform: scale(0.99);
+}
+
+@media (max-width: 968px) {
+    .contato-split-container {
+        flex-direction: column !important;
+        margin-top: 60px;
+    }
+    
+    .contato-info-side, 
+    .contato-form-side {
+        width: 100%;
+        padding: 4rem 2rem;
+    }
+    
+    .contato-info-side h2 {
+        font-size: 2.4rem;
+    }
+}
