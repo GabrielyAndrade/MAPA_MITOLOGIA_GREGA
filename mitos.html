@@ -72,19 +72,40 @@
                     <p>No coração do escuro labirinto de Creta habita o Minotauro, uma besta sedenta de sangue. O herói Teseu oferece-se como tributo para matar a criatura, guiado apenas pelo fio dourado da princesa Ariadne.</p>
                 </div>
             </div>
-        </section>
 
-        <!-- Seção do Mini-Quiz Interativo -->
-        <section class="quiz-section" style="background: #fbf9f3; padding: 2rem; border-radius: 4px; margin-top: 3rem; color: #0b1a30; border: 1px solid rgba(197, 168, 128, 0.25);">
-            <h3>Desafio do Olimpo: Mini-Quiz</h3>
-            <p style="margin-bottom: 1rem; font-family: 'Georgia', serif;">Qual herói utilizou um escudo reflexivo como espelho para derrotar a Medusa?</p>
-            
-            <button onclick="checkAnswer(false)" style="padding: 0.5rem 1rem; margin-right: 0.5rem; cursor: pointer; background: #0b1a30; color: white; border: none;">A) Heracles</button>
-            <button onclick="checkAnswer(true)" style="padding: 0.5rem 1rem; margin-right: 0.5rem; cursor: pointer; background: #0b1a30; color: white; border: none;">B) Perseu</button>
-            <button onclick="checkAnswer(false)" style="padding: 0.5rem 1rem; cursor: pointer; background: #0b1a30; color: white; border: none;">C) Teseu</button>
-        
-            <div id="quiz-feedback" style="margin-top: 1rem; font-weight: bold;"></div>
         </section>
+      
+<!-- Seção Ampliada do Mini-Quiz Interativo -->
+<section class="quiz-section" style="background: #fbf9f3; padding: 2.5rem; border-radius: 4px; margin-top: 4rem; color: #0b1a30; border: 1px solid rgba(197, 168, 128, 0.25);">
+    <h3 style="font-size: 2rem; margin-bottom: 1.5rem; border-bottom: 2px solid #c5a880; padding-bottom: 0.5rem;">Desafio do Olimpo: Mini-Quiz</h3>
+    
+    <!-- Pergunta 1 -->
+    <div class="quiz-item" style="margin-bottom: 2rem;">
+        <p style="font-weight: bold; margin-bottom: 0.5rem; font-family: 'Georgia', serif;">1. Qual herói utilizou um escudo reflexivo como espelho para derrotar a Medusa?</p>
+        <button onclick="checkAnswer(1, false)" style="padding: 0.5rem 1rem; margin-right: 0.5rem; cursor: pointer; background: #0b1a30; color: white; border: none;">A) Heracles</button>
+        <button onclick="checkAnswer(1, true)" style="padding: 0.5rem 1rem; margin-right: 0.5rem; cursor: pointer; background: #0b1a30; color: white; border: none;">B) Perseu</button>
+        <button onclick="checkAnswer(1, false)" style="padding: 0.5rem 1rem; cursor: pointer; background: #0b1a30; color: white; border: none;">C) Teseu</button>
+        <div id="quiz-feedback-1" style="margin-top: 0.5rem; font-weight: bold; font-size: 0.9rem;"></div>
+    </div>
+
+    <!-- Pergunta 2 -->
+    <div class="quiz-item" style="margin-bottom: 2rem;">
+        <p style="font-weight: bold; margin-bottom: 0.5rem; font-family: 'Georgia', serif;">2. Quem desafiou Zeus e roubou o fogo sagrado do Olimpo para dar aos mortais?</p>
+        <button onclick="checkAnswer(2, true)" style="padding: 0.5rem 1rem; margin-right: 0.5rem; cursor: pointer; background: #0b1a30; color: white; border: none;">A) Prometeu</button>
+        <button onclick="checkAnswer(2, false)" style="padding: 0.5rem 1rem; margin-right: 0.5rem; cursor: pointer; background: #0b1a30; color: white; border: none;">B) Jasão</button>
+        <button onclick="checkAnswer(2, false)" style="padding: 0.5rem 1rem; cursor: pointer; background: #0b1a30; color: white; border: none;">C) Apolo</button>
+        <div id="quiz-feedback-2" style="margin-top: 0.5rem; font-weight: bold; font-size: 0.9rem;"></div>
+    </div>
+
+    <!-- Pergunta 3 -->
+    <div class="quiz-item">
+        <p style="font-weight: bold; margin-bottom: 0.5rem; font-family: 'Georgia', serif;">3. Qual criatura fantástica metade homem e metade touro habitava o Labirinto de Creta?</p>
+        <button onclick="checkAnswer(3, false)" style="padding: 0.5rem 1rem; margin-right: 0.5rem; cursor: pointer; background: #0b1a30; color: white; border: none;">A) Ceto</button>
+        <button onclick="checkAnswer(3, false)" style="padding: 0.5rem 1rem; margin-right: 0.5rem; cursor: pointer; background: #0b1a30; color: white; border: none;">B) Górgona</button>
+        <button onclick="checkAnswer(3, true)" style="padding: 0.5rem 1rem; cursor: pointer; background: #0b1a30; color: white; border: none;">C) Minotauro</button>
+        <div id="quiz-feedback-3" style="margin-top: 0.5rem; font-weight: bold; font-size: 0.9rem;"></div>
+    </div>
+</section>
     </main>
 
     <!-- Rodapé Premium -->
