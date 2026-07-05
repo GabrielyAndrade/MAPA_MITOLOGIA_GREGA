@@ -2,8 +2,9 @@
 const mobileMenu = document.getElementById('mobile-menu');
 const navMenu = document.querySelector('.nav-menu');
 
-if (mobileMenu) {
+if (mobileMenu && navMenu) {
     mobileMenu.addEventListener('click', () => {
+        // Alterna a classe correspondente ao CSS
         navMenu.classList.toggle('active');
     });
 }
